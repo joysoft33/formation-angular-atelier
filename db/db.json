@@ -1,0 +1,17 @@
+{
+  "books": [{
+    "id": 1,
+    "title": "Germinal",
+    "author": {
+      "firstName": "Emile",
+      "lastName": "Zola"
+    }
+  }, {
+    "id": 2,
+    "title": "Nana",
+    "author": {
+      "firstName": "Emile",
+      "lastName": "Zola"
+    }
+  }]
+}
