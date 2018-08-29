@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { BookComponent } from './book.component';
+import { BookListComponent } from './book-list.component';
 import { BookService } from './book.service';
 
 describe('BookComponent', () => {
-  let component: BookComponent;
-  let fixture: ComponentFixture<BookComponent>;
+  let component: BookListComponent;
+  let fixture: ComponentFixture<BookListComponent>;
 
   const mockBookService = jasmine.createSpyObj('BookService', {
     getBooks: of([
@@ -23,13 +23,13 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BookComponent],
+      declarations: [BookListComponent],
       providers: [{ provide: BookService, useValue: mockBookService }]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookComponent);
+    fixture = TestBed.createComponent(BookListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

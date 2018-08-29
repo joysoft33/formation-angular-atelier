@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
+import { BookListComponent } from './book/book-list.component';
 import { UppercaseDirective } from './common/uppercase.directive';
 
 @NgModule({
-  declarations: [AppComponent, BookComponent, UppercaseDirective],
+  declarations: [AppComponent, BookListComponent, UppercaseDirective],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
