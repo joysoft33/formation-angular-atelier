@@ -1,0 +1,5 @@
+<div *ngIf="book" (click)="onClick()">
+  <div class="title" appUppercase>Titre: {{ book.title }}</div>
+  <div class="author">Auteur: {{ book.author.firstName }} {{ book.author.lastName }}</div>
+</div>
+<a [routerLink]="'/'">Retour</a>

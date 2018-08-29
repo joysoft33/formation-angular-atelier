@@ -1,13 +1,6 @@
-.book {
-  padding: 15px;
-  margin: 10px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  .title {
-    font-weight: bold;
-  }
-  .author {
-    font-size: 90%;
-    color: grey;
+:host {
+  margin: 20px;
+  a {
+    display: block;
   }
 }

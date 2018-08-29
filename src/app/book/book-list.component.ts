@@ -7,11 +7,16 @@ import { BookService } from './book.service';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
+  message: string;
   books;
 
   constructor(private bookService: BookService) {}
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
+  }
+
+  onNotification(message: string) {
+    this.message = message;
   }
 }

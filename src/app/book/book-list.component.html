@@ -1,4 +1,5 @@
-<div class="book" *ngFor="let book of books | async">
-  <div class="title" appUppercase>Titre: {{ book.title }}</div>
-  <div class="author">Auteur: {{ book.author.firstName }} {{ book.author.lastName }}</div>
+<a *ngFor="let book of books | async" [routerLink]="['/books', book.id]">{{book.title}}</a>
+
+<div class="message" *ngIf="message">
+  {{message}}
 </div>
