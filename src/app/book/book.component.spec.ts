@@ -1,21 +1,21 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { of } from "rxjs";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
-import { BookComponent } from "./book.component";
-import { BookService } from "./book.service";
+import { BookComponent } from './book.component';
+import { BookService } from './book.service';
 
-describe("BookComponent", () => {
+describe('BookComponent', () => {
   let component: BookComponent;
   let fixture: ComponentFixture<BookComponent>;
 
-  const mockBookService = jasmine.createSpyObj("BookService", {
+  const mockBookService = jasmine.createSpyObj('BookService', {
     getBooks: of([
       {
         id: 1,
-        title: "TUTU",
+        title: 'TUTU',
         author: {
-          firstName: "",
-          lastName: ""
+          firstName: '',
+          lastName: ''
         }
       }
     ])
@@ -34,32 +34,32 @@ describe("BookComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it("should detect a valid title", async(() => {
+  it('should detect a valid title', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector(".title").textContent).toContain(
-      "Titre: TUTU"
+    expect(compiled.querySelector('.title').textContent).toContain(
+      'Titre: TUTU'
     );
   }));
 
-  it("should refresh the book", async(() => {
+  it('should refresh the book', async(() => {
     component.books = [
       {
         id: 1,
-        title: "Le JS pour les nulls",
+        title: 'Le JS pour les nulls',
         author: {
-          firstName: "Toto",
-          lastName: "Titi"
+          firstName: 'Toto',
+          lastName: 'Titi'
         }
       }
     ];
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector(".title").textContent).toContain(
-      "Titre: Le JS pour les nulls"
+    expect(compiled.querySelector('.title').textContent).toContain(
+      'Titre: Le JS pour les nulls'
     );
   }));
 });
