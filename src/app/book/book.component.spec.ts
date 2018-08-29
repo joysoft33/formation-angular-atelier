@@ -46,7 +46,7 @@ describe('BookComponent', () => {
   }));
 
   it('should refresh the book', async(() => {
-    component.books = [
+    component.books = of([
       {
         id: 1,
         title: 'Le JS pour les nulls',
@@ -55,7 +55,7 @@ describe('BookComponent', () => {
           lastName: 'Titi'
         }
       }
-    ];
+    ]);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.title').textContent).toContain(
