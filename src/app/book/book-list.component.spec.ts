@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
 import { BookListComponent } from './book-list.component';
 import { BookService } from './book.service';
 
-describe('BookComponent', () => {
+describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
 
@@ -17,6 +19,13 @@ describe('BookComponent', () => {
           firstName: '',
           lastName: ''
         }
+      }, {
+        id: 2,
+        title: 'TOTO',
+        author: {
+          firstName: '',
+          lastName: ''
+        }
       }
     ])
   });
@@ -24,7 +33,8 @@ describe('BookComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BookListComponent],
-      providers: [{ provide: BookService, useValue: mockBookService }]
+      providers: [{ provide: BookService, useValue: mockBookService }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -38,28 +48,10 @@ describe('BookComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should detect a valid title', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: TUTU'
-    );
+  it('should contains two app-book components', async(() => {
+    const appBooks = fixture.debugElement.query(By.css('app-book'));
+    // TODO: detect the two components !!!
+    expect(appBooks).toBeTruthy();
   }));
 
-  it('should refresh the book', async(() => {
-    component.books = of([
-      {
-        id: 1,
-        title: 'Le JS pour les nulls',
-        author: {
-          firstName: 'Toto',
-          lastName: 'Titi'
-        }
-      }
-    ]);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: Le JS pour les nulls'
-    );
-  }));
 });
