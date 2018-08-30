@@ -12,7 +12,7 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     BookModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes, { enableTracing: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

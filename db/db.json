@@ -1,17 +1,67 @@
 {
-  "books": [{
-    "id": 1,
-    "title": "Germinal",
-    "author": {
-      "firstName": "Emile",
-      "lastName": "Zola"
+  "books": [
+    {
+      "id": 1,
+      "title": "Germinal",
+      "author": {
+        "firstName": "Emile",
+        "lastName": "Zola"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Nana",
+      "author": {
+        "firstName": "Emile",
+        "lastName": "Zola"
+      }
+    },
+    {
+      "title": "La Peste",
+      "author": {
+        "firstName": "Albert",
+        "lastName": "CAMUS"
+      },
+      "id": 3
+    },
+    {
+      "title": "La Faim du Tigre",
+      "author": {
+        "firstName": "René",
+        "lastName": "BARJAVEL"
+      },
+      "id": 4
+    },
+    {
+      "author": {
+        "firstName": "Maxime",
+        "lastName": "Lafourcade"
+      },
+      "title": "Les Aventures de Maxou",
+      "id": 5
+    },
+    {
+      "author": {
+        "firstName": "Maxime",
+        "lastName": "Lafourcade"
+      },
+      "title": "Les Aventures de Maxou",
+      "id": 6
+    },
+    {
+      "author": {
+        "firstName": "Toto",
+        "lastName": "Tutu"
+      },
+      "title": "Test",
+      "id": 7
     }
-  }, {
-    "id": 2,
-    "title": "Nana",
-    "author": {
-      "firstName": "Emile",
-      "lastName": "Zola"
+  ],
+  "authors": [
+    {
+      "firstName": "Patrick",
+      "lastName": "Sudskin",
+      "id": 1
     }
-  }]
+  ]
 }

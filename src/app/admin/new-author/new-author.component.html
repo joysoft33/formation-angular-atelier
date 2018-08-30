@@ -1,3 +1,8 @@
-<p>
-  new-author works!
-</p>
+<form (ngSubmit)="onSave()" [formGroup]="authorForm">
+  <input name="firstName" placeholder="Prénom de l'auteur" formControlName="firstName">
+  <input name="lastName" placeholder="Nom de l'auteur" formControlName="lastName">
+  <button type="submit" [disabled]="!authorForm.valid">Enregistrer</button>
+</form>
+<div *ngIf="message" [ngClass]="'error'">
+  {{message | json}}
+</div>

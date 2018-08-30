@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-import { Book } from './book';
+import { Book } from '../models/book';
 import { BookService } from './book.service';
 
 @Component({

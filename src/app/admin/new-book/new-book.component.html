@@ -1,3 +1,9 @@
-<p>
-  new-book works!
-</p>
+<form (ngSubmit)="onSave()" #bookForm="ngForm">
+  <input name="title" placeholder="Titre du livre" [(ngModel)]="book.title">
+  <input name="firstName" placeholder="Prénom de l'auteur" [(ngModel)]="book.author.firstName">
+  <input name="lastName" placeholder="Nom de l'auteur" [(ngModel)]="book.author.lastName">
+  <button type="submit" [disabled]="!bookForm.form.valid">Enregistrer</button>
+</form>
+<div *ngIf="message" [ngClass]="'error'">
+  {{message | json}}
+</div>

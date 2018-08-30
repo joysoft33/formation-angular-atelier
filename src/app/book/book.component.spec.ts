@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, convertToParamMap } from '@angular/router'; 
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
 
@@ -28,7 +28,7 @@ describe('BookComponent', () => {
       declarations: [ BookComponent ],
       providers: [
         {
-          provide: BookService, 
+          provide: BookService,
           useValue: mockBookService
         },
         {
