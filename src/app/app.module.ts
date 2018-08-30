@@ -4,16 +4,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UppercaseDirective } from './common/uppercase.directive';
-import { appRoutes } from './app.routes';
-
 import { BookModule } from './book/book.module';
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [AppComponent, UppercaseDirective],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    BookModule
+    BookModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
