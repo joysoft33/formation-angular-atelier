@@ -1,7 +1,32 @@
 <form (ngSubmit)="onSave()" #bookForm="ngForm">
-  <input name="title" placeholder="Titre du livre" [(ngModel)]="book.title">
-  <input name="firstName" placeholder="Prénom de l'auteur" [(ngModel)]="book.author.firstName">
-  <input name="lastName" placeholder="Nom de l'auteur" [(ngModel)]="book.author.lastName">
+  <input name="title" placeholder="Titre du livre" #title="ngModel" [(ngModel)]="book.title" required minlength="4">
+  <div *ngIf="title.invalid && (title.dirty || title.touched)" class="error">
+    <div *ngIf="title.errors.required">
+      Un titre est requis.
+    </div>
+    <div *ngIf="title.errors.minlength">
+      Le titre doit avoir au moins 4 caractères.
+    </div>
+  </div>
+  <input name="firstName" placeholder="Prénom de l'auteur" #firstName="ngModel" [(ngModel)]="book.author.firstName" required
+    minlength="4">
+  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error">
+    <div *ngIf="firstName.errors.required">
+      Un prénom est requis.
+    </div>
+    <div *ngIf="firstName.errors.minlength">
+      Le prénom doit avoir au moins 4 caractères.
+    </div>
+  </div>
+  <input name="lastName" placeholder="Nom de l'auteur" #lastName="ngModel" [(ngModel)]="book.author.lastName" required minlength="4">
+  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error">
+    <div *ngIf="lastName.errors.required">
+      Un nom est requis.
+    </div>
+    <div *ngIf="lastName.errors.minlength">
+      Le nom doit avoir au moins 4 caractères.
+    </div>
+  </div>
   <button type="submit" [disabled]="!bookForm.form.valid">Enregistrer</button>
 </form>
 <div *ngIf="message" [ngClass]="'error'">

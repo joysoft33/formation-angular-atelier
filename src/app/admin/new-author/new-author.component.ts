@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthorService } from '../author.service';
@@ -21,8 +21,14 @@ export class NewAuthorComponent implements OnInit {
 
   ngOnInit() {
     this.authorForm = new FormGroup({
-      firstName: new FormControl(),
-      lastName: new FormControl()
+      firstName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+      ])
     });
   }
 
@@ -41,4 +47,6 @@ export class NewAuthorComponent implements OnInit {
     );
   }
 
+  get firstName() { return this.authorForm.get('firstName'); }
+  get lastName()  { return this.authorForm.get('lastName'); }
 }
