@@ -11,8 +11,8 @@ import { BookService } from './book.service';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  @Input() book: Book;
   @Output() notification = new EventEmitter<string>();
+  book: Book;
 
   constructor(
     private route: ActivatedRoute,

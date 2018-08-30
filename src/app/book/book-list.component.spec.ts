@@ -49,9 +49,9 @@ describe('BookListComponent', () => {
   });
 
   it('should contains two app-book components', async(() => {
-    const appBooks = fixture.debugElement.query(By.css('app-book'));
+    const items = fixture.debugElement.query(By.css('a'));
     // TODO: detect the two components !!!
-    expect(appBooks).toBeTruthy();
+    expect(items).toBeTruthy();
   }));
 
 });
