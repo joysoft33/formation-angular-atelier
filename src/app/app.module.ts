@@ -1,20 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BookListComponent } from './book/book-list.component';
 import { UppercaseDirective } from './common/uppercase.directive';
-import { BookComponent } from './book/book.component';
 import { appRoutes } from './app.routes';
 
+import { BookModule } from './book/book.module';
+
 @NgModule({
-  declarations: [AppComponent, BookListComponent, UppercaseDirective, BookComponent],
+  declarations: [AppComponent, UppercaseDirective],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BookModule
   ],
   providers: [],
   bootstrap: [AppComponent]
