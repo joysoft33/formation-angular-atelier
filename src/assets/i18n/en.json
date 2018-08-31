@@ -6,9 +6,31 @@
     "LINK_ADMIN": "Administration",
     "LINK_LANG": "Language",
     "LANG_FR": "French",
-    "LANG_EN": "English"
+    "LANG_EN": "English",
+    "RETURN": "Return"
   },
   "BOOKS": {
     "TITLE": "Welcome to my Bookstore!"
+  },
+  "ADMIN": {
+    "TITLE": "Administration area",
+    "CREATE_BOOK": "Create book",
+    "CREATE_AUTHOR": "Create author",
+    "SAVE": "Save",
+    "BOOK": {
+      "HEADER": "Create a new book",
+      "TITLE": "Book title",
+      "TITLE_REQUIRED": "The title is required.",
+      "TITLE_MINLENGTH": "The title must be at least 4 characters long."
+    },
+    "AUTHOR": {
+      "HEADER": "Create a new author",
+      "FIRSTNAME": "Author firstname",
+      "FIRSTNAME_REQUIRED": "The firstname is required.",
+      "FIRSTNAME_MINLENGTH": "The firstname must be at least 4 characters long.",
+      "LASTNAME": "Author lastname",
+      "LASTNAME_REQUIRED": "The lastname is required.",
+      "LASTNAME_MINLENGTH": "The lastname must be at least 4 characters long."
+    }
   }
 }

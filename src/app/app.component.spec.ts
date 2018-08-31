@@ -1,13 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MatMenuModule } from '@angular/material';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatMenuModule],
+      imports: [MatMenuModule, TranslateModule.forRoot()],
       declarations: [AppComponent],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -19,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'bookstore'`, async(() => {
+  it('should have fr as default locale', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('bookstore');
+    expect(app.lang).toEqual('fr');
   }));
 
   it('should render title', async(() => {
@@ -30,7 +31,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('span').textContent).toContain(
-      'Bookstore'
+      'MAIN.TITLE'
     );
   }));
 });

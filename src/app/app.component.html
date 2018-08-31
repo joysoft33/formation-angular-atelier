@@ -6,20 +6,15 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink="books" routerLinkActive="active">{{ 'MAIN.LINK_BOOKS' | translate }}</button>
       <button mat-menu-item routerLink="admin" routerLinkActive="active">{{ 'MAIN.LINK_ADMIN' | translate }}</button>
+      <mat-divider></mat-divider>
       <button mat-menu-item [matMenuTriggerFor]="language">{{ 'MAIN.LINK_LANG' | translate }}</button>
     </mat-menu>
     <mat-menu #language="matMenu">
-      <button mat-menu-item (click)="setLang('fr')">{{ 'MAIN.LANG_FR' | translate }}</button>
-      <button mat-menu-item (click)="setLang('en')">{{ 'MAIN.LANG_EN' | translate }}</button>
+      <a mat-menu-item (click)="setLang('fr')" [ngClass]="{ 'checked': lang === 'fr'}">{{ 'MAIN.LANG_FR' | translate }}</a>
+      <a mat-menu-item (click)="setLang('en')" [ngClass]="{ 'checked': lang === 'en'}">{{ 'MAIN.LANG_EN' | translate }}</a>
     </mat-menu>
   </span>
 </mat-toolbar>
-<app-transclude>
-  <div body>
-      Je suis le texte de toto
-  </div>
-  <div footer>
-      Je suis le footer !
-  </div>
-<</app-transclude>
-<router-outlet></router-outlet>
+<mat-card>
+    <router-outlet></router-outlet>
+</mat-card>

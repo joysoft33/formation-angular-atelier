@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
-
-import { MatListModule, MatCardModule } from '@angular/material';
+import { MatListModule, MatCardModule, MatButtonModule } from '@angular/material';
 
 import { BookStoreComponent } from './book-store.component';
 import { BookListComponent } from './book-list.component';
@@ -18,7 +17,8 @@ import { bookRoutes } from './book.routes';
     RouterModule.forChild(bookRoutes),
     TranslateModule.forChild(),
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   declarations: [BookStoreComponent, BookListComponent, BookComponent],
   bootstrap: [BookStoreComponent]

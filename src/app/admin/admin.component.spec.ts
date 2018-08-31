@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AdminComponent } from './admin.component';
 
@@ -10,6 +11,7 @@ describe('AdminComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminComponent ],
+      imports: [TranslateModule.forRoot()],
       schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();

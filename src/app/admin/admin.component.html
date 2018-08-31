@@ -1,6 +1,6 @@
-<h2>Zone administration</h2>
-<ul>
-  <li><a routerLink="newBook" routerLinkActive="active">Créer un livre</a></li>
-  <li><a routerLink="newAuthor" routerLinkActive="active">Créer un auteur</a></li>
-</ul>
+<h2>{{ 'ADMIN.TITLE' | translate }}</h2>
+<mat-button-toggle-group>
+  <mat-button-toggle routerLink="newBook" routerLinkActive="mat-button-toggle-checked">{{ 'ADMIN.CREATE_BOOK' | translate }}</mat-button-toggle>
+  <mat-button-toggle routerLink="newAuthor" routerLinkActive="mat-button-toggle-checked">{{ 'ADMIN.CREATE_AUTHOR' | translate }}</mat-button-toggle>
+</mat-button-toggle-group>
 <router-outlet></router-outlet>

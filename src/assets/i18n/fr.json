@@ -6,9 +6,31 @@
     "LINK_ADMIN": "Administration",
     "LINK_LANG": "Langage",
     "LANG_FR": "Français",
-    "LANG_EN": "Anglais"
+    "LANG_EN": "Anglais",
+    "RETURN": "Retour"
   },
   "BOOKS": {
     "TITLE": "Bienvenue dans la librairie !"
+  },
+  "ADMIN": {
+    "TITLE": "Zone administration",
+    "CREATE_BOOK": "Créer un livre",
+    "CREATE_AUTHOR": "Créer un auteur",
+    "SAVE": "Enregistrer",
+    "BOOK": {
+      "HEADER": "Création d'un nouveau livre",
+      "TITLE": "Titre du livre",
+      "TITLE_REQUIRED": "Un titre est requis.",
+      "TITLE_MINLENGTH": "Un titre doit comprendre au moins 4 caractères."
+    },
+    "AUTHOR": {
+      "HEADER": "Création d'un nouvel auteur",
+      "FIRSTNAME": "Prénom de l'auteur",
+      "FIRSTNAME_REQUIRED": "Un prénom est requis.",
+      "FIRSTNAME_MINLENGTH": "Un prénom doit comprendre au moins 4 caractères.",
+      "LASTNAME": "Nom de l'auteur",
+      "LASTNAME_REQUIRED": "Un nom est requis.",
+      "LASTNAME_MINLENGTH": "Un nom doit comprendre au moins 4 caractères."
+    }
   }
 }

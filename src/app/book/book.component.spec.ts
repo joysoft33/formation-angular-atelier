@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 
 import { BookComponent } from './book.component';
@@ -26,6 +27,7 @@ describe('BookComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BookComponent ],
+      imports: [TranslateModule.forRoot()],
       providers: [
         {
           provide: BookService,
@@ -55,8 +57,8 @@ describe('BookComponent', () => {
 
   it('should detect a valid title', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: TOTO'
+    expect(compiled.querySelector('mat-card-title').textContent).toContain(
+      'TOTO'
     );
   }));
 
@@ -64,8 +66,8 @@ describe('BookComponent', () => {
     component.book.title = 'Le JS pour les nulls';
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: Le JS pour les nulls'
+    expect(compiled.querySelector('mat-card-title').textContent).toContain(
+      'Le JS pour les nulls'
     );
   }));
 
