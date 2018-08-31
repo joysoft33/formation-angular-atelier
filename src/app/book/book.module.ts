@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { MatListModule, MatCardModule } from '@angular/material';
 
@@ -15,6 +16,7 @@ import { bookRoutes } from './book.routes';
     CommonModule,
     HttpClientModule,
     RouterModule.forChild(bookRoutes),
+    TranslateModule.forChild(),
     MatListModule,
     MatCardModule
   ],

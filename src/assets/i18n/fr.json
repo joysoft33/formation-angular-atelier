@@ -1,0 +1,14 @@
+{
+  "MAIN": {
+    "TITLE": "Ma Librairie",
+    "MENU": "Menu",
+    "LINK_BOOKS": "Bibliothèque",
+    "LINK_ADMIN": "Administration",
+    "LINK_LANG": "Langage",
+    "LANG_FR": "Français",
+    "LANG_EN": "Anglais"
+  },
+  "BOOKS": {
+    "TITLE": "Bienvenue dans la librairie !"
+  }
+}

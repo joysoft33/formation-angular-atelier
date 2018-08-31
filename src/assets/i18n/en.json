@@ -1,0 +1,14 @@
+{
+  "MAIN": {
+    "TITLE": "Bookstore",
+    "MENU": "Menu",
+    "LINK_BOOKS": "Books",
+    "LINK_ADMIN": "Administration",
+    "LINK_LANG": "Language",
+    "LANG_FR": "French",
+    "LANG_EN": "English"
+  },
+  "BOOKS": {
+    "TITLE": "Welcome to my Bookstore!"
+  }
+}

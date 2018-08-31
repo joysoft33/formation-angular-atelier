@@ -1,12 +1,25 @@
 <mat-toolbar color="primary">
-  <span>Bookstore</span>
+  <span>{{ 'MAIN.TITLE' | translate }}</span>
   <span class="fill-remaining-space"></span>
   <span>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu">{{ 'MAIN.MENU' | translate }}</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="books" routerLinkActive="active">Bibliothèque</button>
-      <button mat-menu-item routerLink="admin" routerLinkActive="active">Administration</button>
+      <button mat-menu-item routerLink="books" routerLinkActive="active">{{ 'MAIN.LINK_BOOKS' | translate }}</button>
+      <button mat-menu-item routerLink="admin" routerLinkActive="active">{{ 'MAIN.LINK_ADMIN' | translate }}</button>
+      <button mat-menu-item [matMenuTriggerFor]="language">{{ 'MAIN.LINK_LANG' | translate }}</button>
+    </mat-menu>
+    <mat-menu #language="matMenu">
+      <button mat-menu-item (click)="setLang('fr')">{{ 'MAIN.LANG_FR' | translate }}</button>
+      <button mat-menu-item (click)="setLang('en')">{{ 'MAIN.LANG_EN' | translate }}</button>
     </mat-menu>
   </span>
 </mat-toolbar>
+<app-transclude>
+  <div body>
+      Je suis le texte de toto
+  </div>
+  <div footer>
+      Je suis le footer !
+  </div>
+<</app-transclude>
 <router-outlet></router-outlet>
