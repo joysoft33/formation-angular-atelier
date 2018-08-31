@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { NewBookComponent } from './new-book.component';
 import { BookService } from '../../book/book.service';
@@ -27,7 +28,8 @@ describe('NewBookComponent', () => {
       providers: [
         { provide: BookService, useValue: mockBookService },
         { provide: Router, useValue: {} }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));

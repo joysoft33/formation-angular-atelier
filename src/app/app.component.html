@@ -1,6 +1,14 @@
-<h1>Formation Angular</h1>
-<ul>
-  <li><a routerLink="books" routerLinkActive="active">Bibliothèque</a></li>
-  <li><a routerLink="admin" routerLinkActive="active">Administration</a></li>
-</ul>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <span>Bookstore</span>
+  <span class="fill-remaining-space"></span>
+  <span>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="books" routerLinkActive="active">Bibliothèque</button>
+      <button mat-menu-item routerLink="admin" routerLinkActive="active">Administration</button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
+<mat-card>
+  <router-outlet></router-outlet>
+</mat-card>

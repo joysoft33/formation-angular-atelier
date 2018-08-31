@@ -1,24 +1,37 @@
 <form (ngSubmit)="onSave()" [formGroup]="authorForm">
-  <input name="firstName" placeholder="Prénom de l'auteur" formControlName="firstName">
-  <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error">
-    <div *ngIf="firstName.errors.required">
-      Un prénom est requis.
-    </div>
-    <div *ngIf="firstName.errors.minlength">
-      Le prénom doit avoir au moins 4 caractères.
-    </div>
-  </div>
-  <input name="lastName" placeholder="Nom de l'auteur" formControlName="lastName">
-  <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error">
-    <div *ngIf="lastName.errors.required">
-      Un nom est requis.
-    </div>
-    <div *ngIf="lastName.errors.minlength">
-      Le nom doit avoir au moins 4 caractères.
-    </div>
-  </div>
-  <button type="submit" [disabled]="!authorForm.valid">Enregistrer</button>
+  <mat-card>
+    <mat-card-title>
+      Création d'un nouvel auteur
+    </mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput name="firstName" placeholder="Prénom de l'auteur" formControlName="firstName">
+        <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error">
+          <div *ngIf="firstName.errors.required">
+            Un prénom est requis.
+          </div>
+          <div *ngIf="firstName.errors.minlength">
+            Le prénom doit avoir au moins 4 caractères.
+          </div>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="lastName" placeholder="Nom de l'auteur" formControlName="lastName">
+        <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error">
+          <div *ngIf="lastName.errors.required">
+            Un nom est requis.
+          </div>
+          <div *ngIf="lastName.errors.minlength">
+            Le nom doit avoir au moins 4 caractères.
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!authorForm.valid">Enregistrer</button>
+    </mat-card-actions>
+    <mat-card-footer *ngIf="message" [ngClass]="'error'">
+      {{message | json}}
+    </mat-card-footer>
+  </mat-card>
 </form>
-<div *ngIf="message" [ngClass]="'error'">
-  {{message | json}}
-</div>

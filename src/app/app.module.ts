@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatToolbarModule, MatMenuModule, MatButtonModule, MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { UppercaseDirective } from './common/uppercase.directive';
@@ -11,8 +14,13 @@ import { appRoutes } from './app.routes';
   declarations: [AppComponent, UppercaseDirective],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     BookModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: false })
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

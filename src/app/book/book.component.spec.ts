@@ -55,8 +55,8 @@ describe('BookComponent', () => {
 
   it('should detect a valid title', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: TOTO'
+    expect(compiled.querySelector('mat-card-title').textContent).toContain(
+      'TOTO'
     );
   }));
 
@@ -64,8 +64,8 @@ describe('BookComponent', () => {
     component.book.title = 'Le JS pour les nulls';
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain(
-      'Titre: Le JS pour les nulls'
+    expect(compiled.querySelector('mat-card-title').textContent).toContain(
+      'Le JS pour les nulls'
     );
   }));
 

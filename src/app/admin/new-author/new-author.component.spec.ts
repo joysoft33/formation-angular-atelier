@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { NewAuthorComponent } from './new-author.component';
 import { AuthorService } from '../author.service';
@@ -27,7 +28,8 @@ describe('NewAuthorComponent', () => {
       providers: [
         { provide: AuthorService, useValue: mockAuthorService },
         { provide: Router, useValue: {} }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));

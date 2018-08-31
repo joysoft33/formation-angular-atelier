@@ -1,11 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatMenuModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatMenuModule],
       declarations: [AppComponent],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -23,12 +25,12 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('bookstore');
   }));
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render title', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Formation Angular'
+    expect(compiled.querySelector('span').textContent).toContain(
+      'Bookstore'
     );
   }));
 });
