@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCardModule, MatButtonToggleModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatButtonToggleModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AdminComponent } from './admin.component';
@@ -21,7 +21,8 @@ import { adminRoutes } from './admin.routes';
     MatButtonToggleModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   declarations: [AdminComponent, NewBookComponent, NewAuthorComponent],
   bootstrap: [AdminComponent]

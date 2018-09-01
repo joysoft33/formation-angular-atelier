@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { Author } from '../models/author';
 
@@ -14,11 +15,11 @@ export class AuthorService {
     private http: HttpClient
   ) { }
 
-  getAuthors() {
-    return this.http.get<Author>(BASE_URL);
+  getAuthors(): Observable<Author[]> {
+    return this.http.get<Author[]>(BASE_URL);
   }
 
-  create(author: Author) {
+  create(author: Author): Observable<Author> {
     return this.http.post<Author>(BASE_URL, author);
   }
 }

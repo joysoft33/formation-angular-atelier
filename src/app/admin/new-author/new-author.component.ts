@@ -35,6 +35,7 @@ export class NewAuthorComponent implements OnInit {
   onSave() {
     const form = this.authorForm.value;
     this.authorService.create({
+      id: undefined,
       firstName: form.firstName,
       lastName: form.lastName
     }).subscribe(

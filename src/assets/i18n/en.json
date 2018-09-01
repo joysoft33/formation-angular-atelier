@@ -21,7 +21,8 @@
       "HEADER": "Create a new book",
       "TITLE": "Book title",
       "TITLE_REQUIRED": "The title is required.",
-      "TITLE_MINLENGTH": "The title must be at least 4 characters long."
+      "TITLE_MINLENGTH": "The title must be at least 4 characters long.",
+      "AUTHOR": "Author"
     },
     "AUTHOR": {
       "HEADER": "Create a new author",

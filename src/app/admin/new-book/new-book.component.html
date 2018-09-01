@@ -13,20 +13,11 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput name="firstName" placeholder="{{ 'ADMIN.AUTHOR.FIRSTNAME' | translate }}" #firstName="ngModel" [(ngModel)]="book.author.firstName"
-          required minlength="4">
-        <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="error">
-          <div *ngIf="firstName.errors.required">{{ 'ADMIN.AUTHOR.FIRSTNAME_REQUIRED' | translate }}</div>
-          <div *ngIf="firstName.errors.minlength">{{ 'ADMIN.AUTHOR.FIRSTNAME_MINLENGTH' | translate }}</div>
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput name="lastName" placeholder="{{ 'ADMIN.AUTHOR.LASTNAME' | translate }}" #lastName="ngModel" [(ngModel)]="book.author.lastName"
-          required minlength="4">
-        <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="error">
-          <div *ngIf="lastName.errors.required">{{ 'ADMIN.AUTHOR.LASTNAME_REQUIRED' | translate }}</div>            
-          <div *ngIf="lastName.errors.minlength">{{ 'ADMIN.AUTHOR.LASTNAME_MINLENGTH' | translate }}</div>
-        </mat-error>
+        <mat-select placeholder="{{ 'ADMIN.BOOK.AUTHOR' | translate }}" name="author" [(ngModel)]="authorId" ngDefaultControl required>
+          <mat-option *ngFor="let author of authors$ | async" [value]="author.id">
+            {{author.lastName}} {{author.firstName}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

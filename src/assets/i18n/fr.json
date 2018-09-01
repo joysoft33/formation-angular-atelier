@@ -21,7 +21,8 @@
       "HEADER": "Création d'un nouveau livre",
       "TITLE": "Titre du livre",
       "TITLE_REQUIRED": "Un titre est requis.",
-      "TITLE_MINLENGTH": "Un titre doit comprendre au moins 4 caractères."
+      "TITLE_MINLENGTH": "Un titre doit comprendre au moins 4 caractères.",
+      "AUTHOR": "Auteur du livre"
     },
     "AUTHOR": {
       "HEADER": "Création d'un nouvel auteur",
